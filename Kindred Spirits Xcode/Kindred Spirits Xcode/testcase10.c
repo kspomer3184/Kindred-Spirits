@@ -1,7 +1,10 @@
 // =============================
-// Kindred Spirits: testcase09.c
+// Kindred Spirits: testcase10.c
 // =============================
-// A basic test of the kindredSpirits() function.
+// This is very similar to testcase09.c, but tests that the kindredSpirits
+// function also works in the reverse order. These trees are indeed kindred
+// spirits because the preorder traversal of one of them is the postorder
+// traversal of the other.
 
 
 #include <stdio.h>
@@ -29,6 +32,7 @@ node *forest_fire(node *root)
 	forest_fire(root->left);
 	forest_fire(root->right);
 	free(root);
+    return NULL;
 }
 
 int main(void)
@@ -51,7 +55,7 @@ int main(void)
 	root2->right->left->right = create_node(12);
 	root2->right->right = create_node(18);
 
-	printf("%s\n", kindredSpirits(root1, root2) ? "Success!" : "fail whale :(");
+	printf("%s\n", kindredSpirits(root2, root1) ? "Success!" : "fail whale :(");
 
 	// Clean up after yourself.
 	forest_fire(root1);

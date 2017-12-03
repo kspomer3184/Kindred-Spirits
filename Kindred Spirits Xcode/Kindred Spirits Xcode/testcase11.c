@@ -29,6 +29,7 @@ node *forest_fire(node *root)
 	forest_fire(root->left);
 	forest_fire(root->right);
 	free(root);
+    return NULL;
 }
 
 int main(void)

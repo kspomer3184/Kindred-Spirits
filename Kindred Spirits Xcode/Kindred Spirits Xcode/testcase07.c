@@ -1,7 +1,7 @@
 // =============================
-// Kindred Spirits: testcase01.c
+// Kindred Spirits: testcase07.c
 // =============================
-// Sample main() function for Program #3: Reflections and Kindred Spirits.
+// Test whether the empty tree is considered a reflection of a non-empty tree.
 
 
 #include <stdio.h>
@@ -29,6 +29,7 @@ node *forest_fire(node *root)
 	forest_fire(root->left);
 	forest_fire(root->right);
 	free(root);
+    return NULL;
 }
 
 int main(void)
@@ -44,9 +45,12 @@ int main(void)
 	root1->right->left = create_node(40);
 	root1->right->right = create_node(1);
 
-	// Construct the reflection of the tree, and ensure that that the
-	// isReflection() function works.
-	if (isReflection(root1, root2 = makeReflection(root1)))
+	// Reflect the tree.
+	root2 = makeReflection(root1);
+
+	// Empty tree vs. non-empty tree. These should not be reflections of one
+	// another.
+	if (!isReflection(NULL, root2))
 		printf("Success!\n");
 	else
 		printf("fail whale :(\n");
