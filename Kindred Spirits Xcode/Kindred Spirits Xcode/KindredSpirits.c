@@ -96,7 +96,7 @@ void freeLists(listNode *head){
     freeLists(head->next);
     free(head);
     return;
-};
+}
 
 
 int isReflection(node *a, node *b){
@@ -157,11 +157,12 @@ int kindredSpirits(node *a, node *b){
         listNode *listB = NULL;
         preorderTraversal(b, &listB);
         
-        if (compareLists(listA, listB))
+        if (compareLists(listA, listB)){
             freeLists(listA);
             freeLists(listB);
         
             return 1;
+        }
     }
     return 0;
 };
