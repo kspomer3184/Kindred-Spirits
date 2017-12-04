@@ -2,6 +2,9 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:Kindred Spirits Xcode.xcodeproj">
+      location = "group:/Users/kylespomer/Desktop/Classes/Data Structures &amp; Algorithms/Kindred Spirits/Kindred Spirits Xcode/Kindred Spirits Xcode/testcase05.c">
+   </FileRef>
+   <FileRef
+      location = "self:">
    </FileRef>
 </Workspace>
