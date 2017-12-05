@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		DD141ECA1FD512210029696F /* testcase11.c in Sources */ = {isa = PBXBuildFile; fileRef = DD141EC91FD512210029696F /* testcase11.c */; };
+		DD141EE21FD599CE0029696F /* testcase01.c in Sources */ = {isa = PBXBuildFile; fileRef = DD141EE11FD599CE0029696F /* testcase01.c */; };
 		DD87DF301FD38FAB00B55394 /* KindredSpirits.c in Sources */ = {isa = PBXBuildFile; fileRef = DD87DF131FD38FA400B55394 /* KindredSpirits.c */; };
 /* End PBXBuildFile section */
 
@@ -24,7 +24,7 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		DD141EC91FD512210029696F /* testcase11.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = testcase11.c; sourceTree = "<group>"; };
+		DD141EE11FD599CE0029696F /* testcase01.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = testcase01.c; sourceTree = "<group>"; };
 		DD87DEFE1FD37B4E00B55394 /* Kindred Spirits Xcode */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = "Kindred Spirits Xcode"; sourceTree = BUILT_PRODUCTS_DIR; };
 		DD87DF0B1FD38FA200B55394 /* KindredSpirits.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KindredSpirits.h; sourceTree = "<group>"; };
 		DD87DF131FD38FA400B55394 /* KindredSpirits.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = KindredSpirits.c; sourceTree = "<group>"; };
@@ -62,7 +62,7 @@
 			children = (
 				DD87DF131FD38FA400B55394 /* KindredSpirits.c */,
 				DD87DF0B1FD38FA200B55394 /* KindredSpirits.h */,
-				DD141EC91FD512210029696F /* testcase11.c */,
+				DD141EE11FD599CE0029696F /* testcase01.c */,
 			);
 			path = "Kindred Spirits Xcode";
 			sourceTree = "<group>";
@@ -124,8 +124,8 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				DD141EE21FD599CE0029696F /* testcase01.c in Sources */,
 				DD87DF301FD38FAB00B55394 /* KindredSpirits.c in Sources */,
-				DD141ECA1FD512210029696F /* testcase11.c in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

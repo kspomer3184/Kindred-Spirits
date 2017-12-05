@@ -4,7 +4,8 @@
 //  KindredSpirits.c
 //
 //  Added Data Structures:  listNode
-//  Added Helper Functions: listNode *newNode(listNode **tail, int data)
+//  Added Helper Functions: node *createTreeNode(int data)
+//                          listNode *newNode(listNode **tail, int data)
 //                          void preorderTraversal(node *root, listNode **tail)
 //                          void postorderTraversal(node *root, listNode **tail)
 //                          compareLists(listNode *head1, listNode *head2)
@@ -26,6 +27,16 @@ typedef struct listNode {
     struct listNode *next;
     
 }listNode;
+
+//  creates (and returns a pointer to) a new (tree)node
+node *createTreeNode(int data){
+    node *n = malloc(sizeof(node));
+    
+    n->data = data;
+    n->left = n->right = NULL;
+    
+    return n;
+};
 
 
 //  creates (and returns a pointer to) a new listNode
@@ -64,8 +75,8 @@ void postorderTraversal(node *root, listNode **tail){
     if (root == NULL)
         return;
     
-    preorderTraversal(root->left, tail);
-    preorderTraversal(root->right, tail);
+    postorderTraversal(root->left, tail);
+    postorderTraversal(root->right, tail);
     *tail = newNode(tail, root->data);
 };
 
@@ -88,19 +99,19 @@ int compareLists(listNode *head1, listNode *head2){
 };
 
 
-// frees up allocated memory for a given list
+//  frees up allocated memory for a given list
 void freeLists(listNode *head){
     if (head == NULL)
         return;
     
     freeLists(head->next);
     free(head);
+    
     return;
 }
 
 
 int isReflection(node *a, node *b){
-
     if (a == NULL && b == NULL)
         return 1;
     else if (a == NULL && b != NULL)
@@ -124,9 +135,8 @@ node *makeReflection(node *root){
     if (root == NULL)
         return NULL;
     
-    node *new = malloc(sizeof(node));
-    new->data = root->data;
-
+    node *new = createTreeNode(root->data);
+    
     if(root->right != NULL)
         new->left = makeReflection(root->right);
     if(root->left != NULL)
@@ -137,6 +147,7 @@ node *makeReflection(node *root){
 
 
 int kindredSpirits(node *a, node *b){
+    //initialize list heads and get traversals
     listNode *listA = NULL;
     preorderTraversal(a, &listA);
     listNode *listB = NULL;
@@ -149,9 +160,11 @@ int kindredSpirits(node *a, node *b){
         return 1;
     }
     else{
+        //free up the lists
         freeLists(listA);
         freeLists(listB);
         
+        //try the other way
         listNode *listA = NULL;
         postorderTraversal(a, &listA);
         listNode *listB = NULL;
@@ -169,7 +182,7 @@ int kindredSpirits(node *a, node *b){
 
 
 double difficultyRating(void){
-    return 2;
+    return 2.5;
 };
 
 
